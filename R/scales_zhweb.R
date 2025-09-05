@@ -9,23 +9,25 @@
 #' @export
 #'
 #' @examples zhweb_palettes("zhweb", 3, type = "continuous")
-zhweb_palettes <-  function(name, n, all_palettes = zhweb_colours, type = c("discrete", "continuous")) {
-    palette = all_palettes[[name]]
-    if (missing(n)) {
-        n = length(palette)
-    }
-    type = match.arg(type)
-    out = switch(type,
-                 continuous = grDevices::colorRampPalette(palette[1:n])(n),
-                 discrete = palette[1:n]
-    )
-    structure(out, name = name, class = "palette")
+zhweb_palettes <- function(name, n, all_palettes = biplaR::zhweb_colours,
+                           type = c("discrete", "continuous")) {
+  palette <- all_palettes[[name]]
+  if (missing(n)) {
+    n <- length(palette)
+  }
+  type <- match.arg(type)
+  out <- switch(type,
+    continuous = grDevices::colorRampPalette(palette[1:n])(n),
+    discrete = palette[1:n]
+  )
+  structure(out, name = name, class = "palette")
 }
 
 
 #' Erzeugt eine colour-Farbskala für ggplot2
 #'
-#' @param name Name des Farbvektors aus der Liste biplaR::zhweb_colours, default ist "zhweb_cat"
+#' @param name Name des Farbvektors aus der Liste biplaR::zhweb_colours,
+#' default ist "zhweb_cat"
 #' @param n Anzahl Farben, alle falls nicht angegeben
 #' @param discrete diskrete oder stetige Variable, default ist diskret
 #'
@@ -34,22 +36,25 @@ zhweb_palettes <-  function(name, n, all_palettes = zhweb_colours, type = c("dis
 #'
 #' @examples
 #' ggplot2::ggplot(mtcars, ggplot2::aes(x = mpg, y = disp, colour = hp)) +
-#' ggplot2::geom_point() +
-#' scale_colour_zhweb("zhweb_grey", discrete = FALSE)
-scale_colour_zhweb <- function(name = "zhweb_cat", n, discrete = T) {
-    if (discrete) {
-        ggplot2::scale_colour_manual(values = zhweb_palettes(name = name, n = n, type = "discrete"))
-
-    } else {
-        ggplot2::scale_colour_gradientn(colours = zhweb_palettes(name = name, n = n, type = "continuous"))
-    }
-
+#'   ggplot2::geom_point() +
+#'   scale_colour_zhweb("zhweb_grey", discrete = FALSE)
+scale_colour_zhweb <- function(name = "zhweb_cat", n, discrete = TRUE) {
+  if (discrete) {
+    ggplot2::scale_colour_manual(
+      values = zhweb_palettes(name = name, n = n, type = "discrete")
+    )
+  } else {
+    ggplot2::scale_colour_gradientn(
+      colours = zhweb_palettes(name = name, n = n, type = "continuous")
+    )
+  }
 }
 
 
 #' Erzeugt eine fill-Farbskala für ggplot2
 #'
-#' @param name Name des Farbvektors aus der Liste biplaR::zhweb_colours, default ist "zhweb_cat"
+#' @param name Name des Farbvektors aus der Liste biplaR::zhweb_colours,
+#'     default ist "zhweb_cat"
 #' @param n Anzahl Farben, alle falls nicht angegeben
 #' @param discrete diskrete oder stetige Variable, default ist diskret
 #'
@@ -58,15 +63,19 @@ scale_colour_zhweb <- function(name = "zhweb_cat", n, discrete = T) {
 #'
 #' @examples
 #' ggplot2::ggplot(mtcars, ggplot2::aes(x = gear, fill = as.character(gear))) +
-#' ggplot2::geom_bar() +
-#' scale_fill_zhweb("zhweb_cat")
-scale_fill_zhweb <- function(name = "zhweb_cat", n, discrete = T) {
-    if (discrete) {
-        ggplot2::scale_fill_manual(values = zhweb_palettes(name, n = n, type = "discrete"))
-    } else {
-        ggplot2::scale_fill_gradientn(colours = zhweb_palettes(name = name, n = n, type = "continuous"))
-    }
+#'   ggplot2::geom_bar() +
+#'   scale_fill_zhweb("zhweb_cat")
+scale_fill_zhweb <- function(name = "zhweb_cat", n, discrete = TRUE) {
+  if (discrete) {
+    ggplot2::scale_fill_manual(
+      values = zhweb_palettes(name, n = n, type = "discrete")
+    )
+  } else {
+    ggplot2::scale_fill_gradientn(
+      colours = zhweb_palettes(name = name, n = n, type = "continuous")
+    )
+  }
 }
 
 # Alias für American English
-scale_color_zhweb = scale_colour_zhweb
+scale_color_zhweb <- scale_colour_zhweb
