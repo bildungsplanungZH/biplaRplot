@@ -3,4 +3,7 @@
 export(scale_colour_zhweb)
 export(scale_fill_zhweb)
 export(scale_x_syear)
+export(scale_y)
+export(scale_y_count)
+export(scale_y_pct)
 export(zhweb_palettes)
