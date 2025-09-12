@@ -8,8 +8,8 @@
 #' @return Objekt der Klasse palette mit Namen name
 #' @export
 #'
-#' @examples zhweb_palettes("zhweb", 3, type = "continuous")
-zhweb_palettes <- function(name, n, all_palettes = biplaR::zhweb_colours,
+#' @examples biplaRplot::zhweb_palettes("zhweb", 3, type = "continuous")
+zhweb_palettes <- function(name, n, all_palettes = biplaRplot::zhweb_colours,
                            type = c("discrete", "continuous")) {
   palette <- all_palettes[[name]]
   if (missing(n)) {
@@ -26,7 +26,7 @@ zhweb_palettes <- function(name, n, all_palettes = biplaR::zhweb_colours,
 
 #' Erzeugt eine colour-Farbskala für ggplot2
 #'
-#' @param name Name des Farbvektors aus der Liste biplaR::zhweb_colours,
+#' @param name Name des Farbvektors aus der Liste biplaRplot::zhweb_colours,
 #' default ist "zhweb_cat"
 #' @param n Anzahl Farben, alle falls nicht angegeben
 #' @param discrete diskrete oder stetige Variable, default ist diskret
@@ -37,7 +37,7 @@ zhweb_palettes <- function(name, n, all_palettes = biplaR::zhweb_colours,
 #' @examples
 #' ggplot2::ggplot(mtcars, ggplot2::aes(x = mpg, y = disp, colour = hp)) +
 #'   ggplot2::geom_point() +
-#'   scale_colour_zhweb("zhweb_grey", discrete = FALSE)
+#'   biplaRplot::scale_colour_zhweb("zhweb_grey", discrete = FALSE)
 scale_colour_zhweb <- function(name = "zhweb_cat", n, discrete = TRUE) {
   if (discrete) {
     ggplot2::scale_colour_manual(
@@ -53,7 +53,7 @@ scale_colour_zhweb <- function(name = "zhweb_cat", n, discrete = TRUE) {
 
 #' Erzeugt eine fill-Farbskala für ggplot2
 #'
-#' @param name Name des Farbvektors aus der Liste biplaR::zhweb_colours,
+#' @param name Name des Farbvektors aus der Liste biplaRplot::zhweb_colours,
 #'     default ist "zhweb_cat"
 #' @param n Anzahl Farben, alle falls nicht angegeben
 #' @param discrete diskrete oder stetige Variable, default ist diskret
@@ -64,7 +64,7 @@ scale_colour_zhweb <- function(name = "zhweb_cat", n, discrete = TRUE) {
 #' @examples
 #' ggplot2::ggplot(mtcars, ggplot2::aes(x = gear, fill = as.character(gear))) +
 #'   ggplot2::geom_bar() +
-#'   scale_fill_zhweb("zhweb_cat")
+#'   biplaRplot::scale_fill_zhweb("zhweb_cat")
 scale_fill_zhweb <- function(name = "zhweb_cat", n, discrete = TRUE) {
   if (discrete) {
     ggplot2::scale_fill_manual(

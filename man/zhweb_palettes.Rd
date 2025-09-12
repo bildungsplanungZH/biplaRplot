@@ -27,5 +27,5 @@ Objekt der Klasse palette mit Namen name
 Erzeugt eine Palette mithilfe einer Liste von Farbvektoren aus einer Liste
 }
 \examples{
-zhweb_palettes("zhweb", 3, type = "continuous")
+biplaRplot::zhweb_palettes("zhweb", 3, type = "continuous")
 }

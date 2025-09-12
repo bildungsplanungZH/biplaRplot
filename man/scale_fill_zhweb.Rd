@@ -23,5 +23,5 @@ Erzeugt eine fill-Farbskala für ggplot2
 \examples{
 ggplot2::ggplot(mtcars, ggplot2::aes(x = gear, fill = as.character(gear))) +
   ggplot2::geom_bar() +
-  scale_fill_zhweb("zhweb_cat")
+  biplaRplot::scale_fill_zhweb("zhweb_cat")
 }

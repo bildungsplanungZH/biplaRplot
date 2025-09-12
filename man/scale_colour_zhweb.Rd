@@ -23,5 +23,5 @@ Erzeugt eine colour-Farbskala für ggplot2
 \examples{
 ggplot2::ggplot(mtcars, ggplot2::aes(x = mpg, y = disp, colour = hp)) +
   ggplot2::geom_point() +
-  scale_colour_zhweb("zhweb_grey", discrete = FALSE)
+  biplaRplot::scale_colour_zhweb("zhweb_grey", discrete = FALSE)
 }
