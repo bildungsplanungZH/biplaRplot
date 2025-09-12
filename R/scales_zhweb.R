@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples zhweb_palettes("zhweb", 3, type = "continuous")
-zhweb_palettes <- function(name, n, all_palettes = biplaR::zhweb_colours,
+zhweb_palettes <- function(name, n, all_palettes = biplaRplot::zhweb_colours,
                            type = c("discrete", "continuous")) {
   palette <- all_palettes[[name]]
   if (missing(n)) {
@@ -26,7 +26,7 @@ zhweb_palettes <- function(name, n, all_palettes = biplaR::zhweb_colours,
 
 #' Erzeugt eine colour-Farbskala für ggplot2
 #'
-#' @param name Name des Farbvektors aus der Liste biplaR::zhweb_colours,
+#' @param name Name des Farbvektors aus der Liste biplaRplot::zhweb_colours,
 #' default ist "zhweb_cat"
 #' @param n Anzahl Farben, alle falls nicht angegeben
 #' @param discrete diskrete oder stetige Variable, default ist diskret
@@ -53,7 +53,7 @@ scale_colour_zhweb <- function(name = "zhweb_cat", n, discrete = TRUE) {
 
 #' Erzeugt eine fill-Farbskala für ggplot2
 #'
-#' @param name Name des Farbvektors aus der Liste biplaR::zhweb_colours,
+#' @param name Name des Farbvektors aus der Liste biplaRplot::zhweb_colours,
 #'     default ist "zhweb_cat"
 #' @param n Anzahl Farben, alle falls nicht angegeben
 #' @param discrete diskrete oder stetige Variable, default ist diskret
