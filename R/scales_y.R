@@ -1,44 +1,53 @@
-#' Title
+#' Formatiert Y-Achse für Prozentangaben
 #'
-#' @param accuracy
-#' @param ...
+#' @param accuracy numeric Argument für scales::percent()
+#' @param ... generische Argumente für ggplot2::scale_y_continous()
 #'
-#' @returns
+#' @returns Y-Skala
 #' @export
 #'
 #' @examples
 scale_y_pct <- function(accuracy = 1, ...) {
   ggplot2::scale_y_continuous(
-    labels = \(x) scales::percent(x, accuracy = accuracy, ...)
-  )
-}
-
-
-
-#' Title
-#'
-#' @param digits
-#' @param big.mark
-#' @param ...
-#'
-#' @returns
-#' @export
-#'
-#' @examples
-scale_y_count <- function(digits = 0, big.mark = "'", ...) {
-  ggplot2::scale_y_continuous(
-    labels = \(x) format(round(x, digits), big.mark = big.mark, ...),
+    labels = \(x) scales::percent(x, accuracy = accuracy),
     ...
   )
 }
 
 
-#' Title
+
+#' Formatiert Y-Achse ohne Nachkommastellen und mit Hochkomma für Tausender
 #'
-#' @param type
-#' @param ...
+#' @param digits numeric Anzahl Nachkommastellen, default ist 0
+#' @param big.mark charcter Zeichen für Tausender, default ist Hochkomma (')
+#' @param ... generische Argumente für ggplot2::scale_y_continous()
 #'
-#' @returns
+#' @returns Y-Skala
+#' @export
+#'
+#' @examples     ex_data <- data.frame(
+#' group = c("A", "B", "C"),
+#' n = c(7234, 4597, 9346))
+#'
+#' p <- ex_data |>
+#'     ggplot2::ggplot(ggplot2::aes(group, n)) +
+#'     ggplot2::geom_col() +
+#'     scale_y_count()
+scale_y_count <- function(digits = 0, big.mark = "'", ...) {
+  ggplot2::scale_y_continuous(
+    labels = \(x) format(round(x, digits), big.mark = big.mark),
+    ...
+  )
+}
+
+
+#' Formatiert Y-Achse für Prozente oder mit Hochkomma/Nachkommastellen
+#'
+#' @param type character, "count" oder "pct"
+#' @param ... generische Argumente für ggplot2::scale_y_continous()
+#' oder scale_y_count()/scale_y_pct()
+#'
+#' @returns Y-Skala
 #' @export
 #'
 #' @examples
