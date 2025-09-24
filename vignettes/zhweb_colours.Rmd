@@ -1,0 +1,73 @@
+---
+title: "ZHWeb-Farben in Abbildungen verwenden"
+author: "`r utils::person('Sarah', 'Gerhard', email = 'sarah.gerhard@bi.zh.ch')`"
+date: "`r format(Sys.Date(), '%d. %B %Y')`"
+output: 
+    rmarkdown::html_vignette:
+        toc: true
+vignette: >
+  %\VignetteIndexEntry{zhweb_colours}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+# library(biplaRplot)
+devtools::load_all()
+library(ggplot2)
+```
+
+
+## Package installieren
+
+Die aktuelle Version des Packages `biplaRplot` lässt sich mit `devtools::install_github("bildungsplanungZH/biplaRplot")` installieren.
+
+## ZHWeb-Farbpaletten
+
+Das Objekt `zhweb_colours` im package `biplaRplot` enthält verschiedene Farbpaletten gemäss Grundkonfigurationen für die Webgrafiken der Bildungsplanung des Kantons Zürich ([Link](https://observablehq.com/@bildungsplanungzh/general#cell-28))
+
+* `zhweb` enthält die ZHWeb-Grundfarben (ohne Graustufen)
+* `zhweb_additional` die ZHWeb-Zusatzfarben
+* `zhweb_grey` die Graustufen im ZHWeb und
+* `zhweb_cat` die ZHWeb-Farben für kategorielle Variablen.
+
+Die Paletten können entweder über das Listenobjekt `zhweb_colours` oder mithilfe der Funktion `zhweb_palettes()` aufgerufen werden. Der Aufruf über das Listenobjekt gibt einen character vector der Farbcodes zurück, der Aufruf übr die Funktion ein Paletten-Objekt. 
+
+```{r}
+zhweb_colours$zhweb_cat
+
+zhweb_palettes(name = "zhweb", n = 6, type = "continuous")
+```
+
+## Verwendung für colour-Skalen
+
+Die Funktion `scale_colour_zhweb()` erzeugt eine colour-Skala für ggplot-Grafiken, wobei der Name der Farbpalette, die Anzahl Farben und die Art der Variable(stetig oder diskret) als Argumente übergeben werden können. Ohne andere Angabe kommt die Palette `zhweb_cat` für diskrete Variablen mit allen vorhandenen Farben zur Anwendung.
+
+```{r}
+mtcars |> 
+    ggplot(aes(x = disp, y = hp, colour = as.factor(cyl))) +
+    geom_point() +
+    scale_colour_zhweb("zhweb_cat")
+
+```
+
+
+## Verwendung für fill-Skalen
+
+Die Funktion `scale_fill_zhweb()` erzeugt eine fill-Skala für ggplot-Grafiken, wobei der Name der Farbpalette, die Anzahl Farben und die Art der Variable(stetig oder diskret) als Argumente übergeben werden können. Ohne andere Angabe kommt die Palette `zhweb_cat` für diskrete Variablen mit allen vorhandenen Farben zur Anwendung.
+
+```{r}
+diamonds |> 
+    ggplot(aes(x = color, fill = cut)) +
+    geom_bar() +
+    scale_fill_zhweb("zhweb_cat") +
+    theme(legend.position = "right")
+
+```

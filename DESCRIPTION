@@ -12,4 +12,9 @@ Depends:
     R (>= 3.5)
 LazyData: true
 Imports: 
+    devtools,
     ggplot2
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
