@@ -7,6 +7,15 @@
 #' @export
 #'
 #' @examples
+#' ex_data <- data.frame(
+#'   group = c("A", "B", "C"),
+#'   n = c(.7234, .4597, .9346)
+#' )
+#'
+#' p <- ex_data |>
+#'   ggplot2::ggplot(ggplot2::aes(group, n)) +
+#'   ggplot2::geom_col() +
+#'   scale_y_pct(limits = c(0, 1))
 scale_y_pct <- function(accuracy = 1, ...) {
   ggplot2::scale_y_continuous(
     labels = \(x) scales::percent(x, accuracy = accuracy),
@@ -25,17 +34,18 @@ scale_y_pct <- function(accuracy = 1, ...) {
 #' @returns Y-Skala
 #' @export
 #'
-#' @examples     ex_data <- data.frame(
-#' group = c("A", "B", "C"),
-#' n = c(7234, 4597, 9346))
+#' @examples ex_data <- data.frame(
+#'   group = c("A", "B", "C"),
+#'   n = c(7234, 4597, 9346)
+#' )
 #'
 #' p <- ex_data |>
-#'     ggplot2::ggplot(ggplot2::aes(group, n)) +
-#'     ggplot2::geom_col() +
-#'     scale_y_count()
-scale_y_count <- function(digits = 0, big.mark = "'", ...) {
+#'   ggplot2::ggplot(ggplot2::aes(group, n)) +
+#'   ggplot2::geom_col() +
+#'   scale_y_count()
+scale_y_count <- function(digits = 0, big_mark = "'", ...) {
   ggplot2::scale_y_continuous(
-    labels = \(x) format(round(x, digits), big.mark = big.mark),
+    labels = \(x) format(round(x, digits), big.mark = big_mark),
     ...
   )
 }
@@ -51,6 +61,15 @@ scale_y_count <- function(digits = 0, big.mark = "'", ...) {
 #' @export
 #'
 #' @examples
+#' ex_data <- data.frame(
+#'   group = c("A", "B", "C"),
+#'   n = c(.7234, .4597, .9346)
+#' )
+#'
+#' p <- ex_data |>
+#'   ggplot2::ggplot(ggplot2::aes(group, n)) +
+#'   ggplot2::geom_col() +
+#'   scale_y("pct")
 scale_y <- function(type = "count", ...) {
   assertthat::assert_that(type %in% c("count", "pct"))
 
@@ -59,4 +78,3 @@ scale_y <- function(type = "count", ...) {
     pct = scale_y_pct(...)
   )
 }
-

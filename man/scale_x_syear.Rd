@@ -17,11 +17,12 @@ Formatiert die Beschriftungen auf der X-Achse als Schuljahre
 }
 \examples{
 ex_data <- data.frame(
-   jahr = c(2023, 2024, 2025),
-   n = c(7, 4, 9))
+  jahr = c(2023, 2024, 2025),
+  n = c(7, 4, 9)
+)
 
-   ex_data |>
-       ggplot2::ggplot(ggplot2::aes(jahr, n)) +
-       ggplot2::geom_col() +
-       scale_x_syear()
+ex_data |>
+  ggplot2::ggplot(ggplot2::aes(jahr, n)) +
+  ggplot2::geom_col() +
+  scale_x_syear()
 }
