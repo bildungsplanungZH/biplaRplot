@@ -4,12 +4,12 @@
 \alias{scale_y_count}
 \title{Formatiert Y-Achse ohne Nachkommastellen und mit Hochkomma für Tausender}
 \usage{
-scale_y_count(digits = 0, big.mark = "'", ...)
+scale_y_count(digits = 0, big_mark = "'", ...)
 }
 \arguments{
 \item{digits}{numeric Anzahl Nachkommastellen, default ist 0}
 
-\item{big.mark}{charcter Zeichen für Tausender, default ist Hochkomma (')}
+\item{big_mark}{charcter Zeichen für Tausender, default ist Hochkomma (')}
 
 \item{...}{generische Argumente für ggplot2::scale_y_continous()}
 }

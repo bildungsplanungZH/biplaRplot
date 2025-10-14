@@ -28,7 +28,7 @@ scale_y_pct <- function(accuracy = 1, ...) {
 #' Formatiert Y-Achse ohne Nachkommastellen und mit Hochkomma für Tausender
 #'
 #' @param digits numeric Anzahl Nachkommastellen, default ist 0
-#' @param big.mark charcter Zeichen für Tausender, default ist Hochkomma (')
+#' @param big_mark charcter Zeichen für Tausender, default ist Hochkomma (')
 #' @param ... generische Argumente für ggplot2::scale_y_continous()
 #'
 #' @returns Y-Skala

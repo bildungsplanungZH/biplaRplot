@@ -20,3 +20,29 @@ scale_x_syear <- function(...) {
     ...
   )
 }
+
+
+#' Formatiert X-Achse für Prozentangaben
+#'
+#' @param accuracy numeric Argument für scales::percent()
+#' @param ... generische Argumente für ggplot2::scale_x_continous()
+#'
+#' @returns X-Skala
+#' @export
+#'
+#' @examples
+#' ex_data <- data.frame(
+#'   group = c("A", "B", "C"),
+#'   n = c(.7234, .4597, .9346)
+#' )
+#'
+#' p <- ex_data |>
+#'   ggplot2::ggplot(ggplot2::aes(n, group)) +
+#'   ggplot2::geom_col() +
+#'   scale_x_pct(limits = c(0, 1))
+scale_x_pct <- function(accuracy = 1, ...) {
+    ggplot2::scale_x_continuous(
+        labels = \(x) scales::percent(x, accuracy = accuracy),
+        ...
+    )
+}
