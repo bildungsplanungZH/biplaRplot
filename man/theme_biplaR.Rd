@@ -7,15 +7,17 @@
 theme_biplaR(grid_x = TRUE, grid_y = TRUE)
 }
 \arguments{
-\item{grid_x}{boolean Anzeige der Gridlinien für die X-Achse}
+\item{grid_x}{boolean Anzeige der Gitterlinien für die X-Achse}
 
-\item{grid_y}{boolean Anzeige der Gridlinien für die X-Achse}
+\item{grid_y}{boolean Anzeige der Gitterlinien für die X-Achse}
 }
 \value{
 ggplot-Theme
 }
 \description{
-ggplot-Theme für die Bildungsplanung Kanton Zürich
+Das biplaR-Theme basiert auf theme_bw() und überschreibt ausgewählte Elemente.
+Die Darstellung der Gitterlinien lässt sich pro Achse über die Argumente
+\code{grid_x} bzw. \code{grid_y} steuern.
 }
 \examples{
 theme_biplaR()

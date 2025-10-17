@@ -19,8 +19,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-# library(biplaRplot)
-devtools::load_all()
+library(biplaRplot)
 library(ggplot2)
 ```
 
