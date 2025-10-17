@@ -16,7 +16,7 @@ theme_biplaR <- function(grid_x = TRUE, grid_y = TRUE) {
     assertthat::assert_that(assertthat::is.flag(grid_x) & assertthat::is.flag(grid_y))
 
     gridline <- ggplot2::element_line(
-        linetype = "dashed",
+        linetype = "22",
         linewidth = 0.15,
         color = "#999999"
     )
@@ -54,8 +54,10 @@ theme_biplaR <- function(grid_x = TRUE, grid_y = TRUE) {
         panel.grid.minor = ggplot2::element_blank(),
         panel.grid.major.x = gridline_x,
         panel.grid.major.y = gridline_y,
+
+        axis.title = ggplot2::element_text(size = 12),
         axis.text.x = ggplot2::element_text(margin = ggplot2::margin(ifelse(grid_x, 10, -10), 0, 10, 0)),
-        axis.text.y = ggplot2::element_text(margin = ggplot2::margin(0, ifelse(grid_y, 10, -10), 0, 10)),
+        axis.text.y = ggplot2::element_text(margin = ggplot2::margin(0, ifelse(grid_y, 10, -20), 0, 10)),
 
         axis.ticks = ggplot2::element_blank(),
 
@@ -64,7 +66,8 @@ theme_biplaR <- function(grid_x = TRUE, grid_y = TRUE) {
         panel.border = ggplot2::element_blank(),
 
         geom = ggplot2::element_geom(pointsize = 3,
-                            linewidth = 1.1)
+                            linewidth = 1.1,
+                            colour = "white")
     )
 }
 
