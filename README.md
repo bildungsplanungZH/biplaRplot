@@ -1,26 +1,20 @@
-# Arbeitstitel
+# Funktionen zum Erstellen von Grafiken mit ggplot2
 
-15.09.2022  
-Kontakt: Vorname Nachname <vorname.nachname@bi.zh>
+12.11.2025  
+
+Kontakt: \
+Sarah Gerhard: sarah.gerhard@bi.zh.ch\
+Thomas Radinger: thomas.radinger@bi.zh.ch\
+Christina Arn: christina.arn@bi.zh.ch
 
 ### Kurzbeschreibung
-Hier folgt eine *kurze* Beschreibung, wofür das Repository angelegt wurde:  
-- Was ist das Ziel der Übung?  
-- Für wen wird die Datenauswertung erstellt?  
-- Wer ist das Zielpublikum des Berichts?  
+Das Package enthält Funktionen zum Erstellen von möglichst CD-konformen Grafiken mit ggplot2. Das biplaRplot Package löst teils veraltete Funktionalitäten in [biplaR](https://github.com/bildungsplanungZH/biplaR) ab. In biplaRplot enthalten sind:
+- Funktionen zur Verwendung der zhweb-Farbpalette für Grafiken
+- Ein minimales ggplot-Theme
 
+### Installation
+Package installieren mit `devtools::install_github("bildungsplanungZH/biplaRplot")`
 
-### Ablage auf dem G:/
-Hier wird festgehalten, wo sich zugehörige Dateien in der Ablage befinden:  
-- `G:\Pfadangaben_einfuegen`  
-- `G:\03_Arbeiten\irgendein_Dossier`  
-- `G:\03_Arbeiten\Projekte\etwas_spannendes`  
-
-
-### Geplante Arbeiten
-Manchmal hilft eine Liste mit den geplanten Arbeitsschritten inklusive Stand der Arbeiten:  
-- Datenabfrage erstellen/Datenquellen einlesen (OK)  
-- Daten analysieren (WIP)  
-- Resultate berichten (TODO)  
-
-
+### Geplante Releases / Milestones
+- [Version 0.1](https://github.com/bildungsplanungZH/biplaRplot/milestone/1) bis Ende November 2025
+- [Version 0.2](https://github.com/bildungsplanungZH/biplaRplot/milestone/2) bis Ende Februar 2026
