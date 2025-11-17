@@ -9,7 +9,7 @@ scale_y_pct(accuracy = 1, ...)
 \arguments{
 \item{accuracy}{numeric Argument für scales::percent()}
 
-\item{...}{generische Argumente für ggplot2::scale_y_continous()}
+\item{...}{generische Argumente für ggplot2::scale_y_continuous()}
 }
 \value{
 Y-Skala

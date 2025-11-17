@@ -1,6 +1,6 @@
 #' Formatiert die Beschriftungen auf der X-Achse als Schuljahre
 #'
-#' @param ... generische Argumente für ggplot2::scale_x_continous()
+#' @param ... generische Argumente für ggplot2::scale_x_continuous()
 #'
 #' @returns X-Skala
 #' @export
@@ -25,7 +25,7 @@ scale_x_syear <- function(...) {
 #' Formatiert X-Achse für Prozentangaben
 #'
 #' @param accuracy numeric Argument für scales::percent()
-#' @param ... generische Argumente für ggplot2::scale_x_continous()
+#' @param ... generische Argumente für ggplot2::scale_x_continuous()
 #'
 #' @returns X-Skala
 #' @export

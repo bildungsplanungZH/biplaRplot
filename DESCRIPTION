@@ -14,9 +14,9 @@ Imports:
     assertthat,
     scales,
     stringr,
-    devtools,
     ggplot2 (>= 4.0.0)
 Suggests: 
+    devtools,
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)

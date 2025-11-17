@@ -9,9 +9,9 @@ scale_y_count(digits = 0, big_mark = "'", ...)
 \arguments{
 \item{digits}{numeric Anzahl Nachkommastellen, default ist 0}
 
-\item{big_mark}{charcter Zeichen für Tausender, default ist Hochkomma (')}
+\item{big_mark}{character Zeichen für Tausender, default ist Hochkomma (')}
 
-\item{...}{generische Argumente für ggplot2::scale_y_continous()}
+\item{...}{generische Argumente für ggplot2::scale_y_continuous()}
 }
 \value{
 Y-Skala

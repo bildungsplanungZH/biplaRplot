@@ -7,7 +7,7 @@
 scale_x_syear(...)
 }
 \arguments{
-\item{...}{generische Argumente für ggplot2::scale_x_continous()}
+\item{...}{generische Argumente für ggplot2::scale_x_continuous()}
 }
 \value{
 X-Skala
