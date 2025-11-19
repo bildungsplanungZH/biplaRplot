@@ -41,8 +41,8 @@ scale_x_syear <- function(...) {
 #'   ggplot2::geom_col() +
 #'   scale_x_pct(limits = c(0, 1))
 scale_x_pct <- function(accuracy = 1, ...) {
-    ggplot2::scale_x_continuous(
-        labels = \(x) scales::percent(x, accuracy = accuracy),
-        ...
-    )
+  ggplot2::scale_x_continuous(
+    labels = \(x) scales::percent(x, accuracy = accuracy),
+    ...
+  )
 }

@@ -1,11 +1,11 @@
 Package: biplaRplot
-Title: ggplot-Theme für die Bildungsplanung
+Title: ggplot-Funktionen für die Bildungsplanung
 Version: 0.0.0.9000
 Authors@R: c(
     person("Christina", "Arn", , "christina.arn@bi.zh.ch", role = c("aut", "cre")),
     person("Thomas", "Radinger", , "thomas.radinger@bi.zh.ch", role = c("aut")),
     person("Sarah", "Gerhard", , "sarah.gerhard@bi.zh.ch", role = c("aut")))
-Description: What the package does (one paragraph).
+Description: Das Package enthält Funktionen zum Erstellen von möglichst CD-konformen Grafiken mit ggplot2 (Farbpaletten, Achsenformatierung, ggplot-Theme).
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

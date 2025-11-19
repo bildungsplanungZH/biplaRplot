@@ -41,10 +41,14 @@ theme_biplar <- function(grid_x = TRUE, grid_y = TRUE) {
     # Overwrite base theme defaults ============================================
     ggplot2::theme(
       # to plot and panel
-      plot.title = ggplot2::element_text(family = "Arial Black",
-                                         margin = ggplot2::margin(b = 15)),
-      plot.subtitle = ggplot2::element_text(family = "Arial",
-                                            margin = ggplot2::margin(b = 20)),
+      plot.title = ggplot2::element_text(
+        family = "Arial Black",
+        margin = ggplot2::margin(b = 15)
+      ),
+      plot.subtitle = ggplot2::element_text(
+        family = "Arial",
+        margin = ggplot2::margin(b = 20)
+      ),
       plot.title.position = "plot",
       plot.caption.position = "plot",
       panel.grid.minor = ggplot2::element_blank(),

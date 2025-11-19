@@ -10,6 +10,7 @@ Christina Arn: christina.arn@bi.zh.ch
 ### Kurzbeschreibung
 Das Package enthält Funktionen zum Erstellen von möglichst CD-konformen Grafiken mit ggplot2. Das biplaRplot Package löst teils veraltete Funktionalitäten in [biplaR](https://github.com/bildungsplanungZH/biplaR) ab. In biplaRplot enthalten sind:
 - Funktionen zur Verwendung der zhweb-Farbpalette für Grafiken
+- Funktionen zur Formatierung der Achsen (mit Hochkomma, Prozent, Schuljahr)
 - Ein minimales ggplot-Theme
 
 ### Installation

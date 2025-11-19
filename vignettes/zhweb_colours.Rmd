@@ -50,11 +50,10 @@ zhweb_palettes(name = "zhweb", n = 6, type = "continuous")
 Die Funktion `scale_colour_zhweb()` erzeugt eine colour-Skala für ggplot-Grafiken, wobei der Name der Farbpalette, die Anzahl Farben und die Art der Variable(stetig oder diskret) als Argumente übergeben werden können. Ohne andere Angabe kommt die Palette `zhweb_cat` für diskrete Variablen mit allen vorhandenen Farben zur Anwendung.
 
 ```{r}
-mtcars |> 
-    ggplot(aes(x = disp, y = hp, colour = as.factor(cyl))) +
-    geom_point() +
-    scale_colour_zhweb("zhweb_cat")
-
+mtcars |>
+  ggplot(aes(x = disp, y = hp, colour = as.factor(cyl))) +
+  geom_point() +
+  scale_colour_zhweb("zhweb_cat")
 ```
 
 
@@ -63,10 +62,9 @@ mtcars |>
 Die Funktion `scale_fill_zhweb()` erzeugt eine fill-Skala für ggplot-Grafiken, wobei der Name der Farbpalette, die Anzahl Farben und die Art der Variable(stetig oder diskret) als Argumente übergeben werden können. Ohne andere Angabe kommt die Palette `zhweb_cat` für diskrete Variablen mit allen vorhandenen Farben zur Anwendung.
 
 ```{r}
-diamonds |> 
-    ggplot(aes(x = color, fill = cut)) +
-    geom_bar() +
-    scale_fill_zhweb("zhweb_cat") +
-    theme(legend.position = "right")
-
+diamonds |>
+  ggplot(aes(x = color, fill = cut)) +
+  geom_bar() +
+  scale_fill_zhweb("zhweb_cat") +
+  theme(legend.position = "right")
 ```
