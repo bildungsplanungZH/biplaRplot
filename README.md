@@ -14,7 +14,7 @@ Das Package enthält Funktionen zum Erstellen von möglichst CD-konformen Grafik
 - Ein minimales ggplot-Theme
 
 ### Installation
-Package installieren mit `devtools::install_github("bildungsplanungZH/biplaRplot")`
+Package installieren mit `devtools::install_github("bildungsplanungZH/biplaRplot", build_vignettes = T)`
 
 ### Geplante Releases / Milestones
 - [Version 0.1](https://github.com/bildungsplanungZH/biplaRplot/milestone/1) bis Ende November 2025
