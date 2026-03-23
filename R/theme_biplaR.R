@@ -17,7 +17,7 @@ theme_biplar <- function(grid_x = TRUE, grid_y = TRUE) {
 
   gridline <- ggplot2::element_line(
     linetype = "22",
-    linewidth = 0.15,
+    linewidth = 0.5,
     color = "#999999"
   )
 
