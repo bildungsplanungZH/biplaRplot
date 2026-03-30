@@ -63,7 +63,7 @@ assign_project_colours <- function(domain,
 #' @param domain Character. Domain name (e.g. "sex", "subject", "levels").
 #' @param env Environment. Colour registry (default: zhweb_project_colours).
 #'
-#' @return A ggplot2 object showing the colour swatch.
+#' @return A plot showing the colour swatch.
 #' @export
 #'
 #' @examples
