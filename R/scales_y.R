@@ -1,6 +1,7 @@
 #' Formatiert Y-Achse für Prozentangaben
 #'
 #' @param accuracy numeric Argument für scales::percent()
+#' @param name Achsenbeschriftung (Default: Anteil in Prozent)
 #' @param ... generische Argumente für ggplot2::scale_y_continuous()
 #'
 #' @returns Y-Skala
@@ -16,8 +17,9 @@
 #'   ggplot2::ggplot(ggplot2::aes(group, n)) +
 #'   ggplot2::geom_col() +
 #'   scale_y_pct(limits = c(0, 1))
-scale_y_pct <- function(accuracy = 1, ...) {
+scale_y_pct <- function(accuracy = 1, name = "Anteil in Prozent", ...) {
   ggplot2::scale_y_continuous(
+    name = name,
     labels = \(x) scales::percent(x, accuracy = accuracy),
     ...
   )
@@ -29,6 +31,7 @@ scale_y_pct <- function(accuracy = 1, ...) {
 #'
 #' @param digits numeric Anzahl Nachkommastellen, default ist 0
 #' @param big_mark character Zeichen für Tausender, default ist Hochkomma (')
+#' @param name Achsenbeschriftung (Default: "Anzahl Lernende")
 #' @param ... generische Argumente für ggplot2::scale_y_continuous()
 #'
 #' @returns Y-Skala
@@ -43,8 +46,9 @@ scale_y_pct <- function(accuracy = 1, ...) {
 #'   ggplot2::ggplot(ggplot2::aes(group, n)) +
 #'   ggplot2::geom_col() +
 #'   scale_y_count()
-scale_y_count <- function(digits = 0, big_mark = "'", ...) {
+scale_y_count <- function(digits = 0, big_mark = "'", name = "Anzahl Lernende", ...) {
   ggplot2::scale_y_continuous(
+    name = name,
     labels = \(x) format(round(x, digits), big.mark = big_mark),
     ...
   )

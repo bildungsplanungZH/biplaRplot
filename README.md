@@ -17,7 +17,7 @@ Das Package enthält Funktionen zum Erstellen von möglichst CD-konformen Grafik
 Package installieren mit `devtools::install_github("bildungsplanungZH/biplaRplot", build_vignettes = T)`
 
 ### Geplante Releases / Milestones
-- [Version 0.2](https://github.com/bildungsplanungZH/biplaRplot/milestone/2) bis Ende Februar 2026
+- [Version 0.2](https://github.com/bildungsplanungZH/biplaRplot/milestone/2) bis Ende März 2026
 
 ### Vergangene Releases / Milestones
 - [Version 0.1](https://github.com/bildungsplanungZH/biplaRplot/milestone/1) bis Ende November 2025
