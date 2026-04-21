@@ -9,8 +9,10 @@
 # Load into environment
 load("data/zhweb_colours.rda")
 
-# Edit colour vectors
+# Empty current colour list
+zhweb_colours <- list()
 
+# Edit colour vectors
 zhweb_colours$zhweb <- c(
     "#29A1C2",
     "#2885d1",
@@ -87,23 +89,6 @@ zhweb_colours$zhweb_divergingRedBlue <- c(
     "#125c96"
 )
 
-zhweb_colours$zhweb_divergingBlueRed <- c(
-    "#125c96",
-    "#1b72b6",
-    "#2c88d3",
-    "#559ee1",
-    "#80b4e6",
-    "#aacae9",
-    "#cfdfef",
-    "#f1f1f1",
-    "#eed6db",
-    "#e8b7c1",
-    "#e594a7",
-    "#e26d8d",
-    "#d94274",
-    "#bf2960",
-    "#9e1d4d"
-)
 
 zhweb_colours$zhweb_divergingOrangeAquamarine <- c(
     "#86450a",
@@ -122,22 +107,6 @@ zhweb_colours$zhweb_divergingOrangeAquamarine <- c(
     "#15665f"
 )
 
-zhweb_colours$zhweb_divergingAquamarineOrange <- c(
-    "#15665f",
-    "#1b7e75",
-    "#22968c",
-    "#60c3b8",
-    "#8dd6cd",
-    "#c0e6e1",
-    "#f1f1f1",
-    "#eed8cb",
-    "#eabb9c",
-    "#e79b65",
-    "#dd7c2f",
-    "#c26817",
-    "#a4560f",
-    "#86450a"
-)
 
 # Save updated palette
 save(zhweb_colours, file = "data/zhweb_colours.rda")

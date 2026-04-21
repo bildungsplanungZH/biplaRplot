@@ -30,6 +30,7 @@ zhweb_palettes <- function(name, n, all_palettes = biplaRplot::zhweb_colours,
 #' default ist "zhweb_cat"
 #' @param n Anzahl Farben, alle falls nicht angegeben
 #' @param discrete diskrete oder stetige Variable, default ist diskret
+#' @param reverse Kehrt die Reihenfolge des Farbvektors um
 #'
 #' @return colour-Skala
 #' @export
@@ -38,14 +39,27 @@ zhweb_palettes <- function(name, n, all_palettes = biplaRplot::zhweb_colours,
 #' ggplot2::ggplot(mtcars, ggplot2::aes(x = mpg, y = disp, colour = hp)) +
 #'   ggplot2::geom_point() +
 #'   biplaRplot::scale_colour_zhweb("zhweb_grey", discrete = FALSE)
-scale_colour_zhweb <- function(name = "zhweb_cat", n, discrete = TRUE) {
+scale_colour_zhweb <- function(name = "zhweb_cat",
+                               n,
+                               discrete = TRUE,
+                               reverse = FALSE) {
+  pal <- zhweb_palettes(
+    name = name,
+    n = n,
+    type = if (discrete) "discrete" else "continuous"
+  )
+
+  if (reverse) {
+    pal <- rev(pal)
+  }
+
   if (discrete) {
     ggplot2::scale_colour_manual(
-      values = zhweb_palettes(name = name, n = n, type = "discrete")
+      values = pal
     )
   } else {
     ggplot2::scale_colour_gradientn(
-      colours = zhweb_palettes(name = name, n = n, type = "continuous")
+      colours = pal
     )
   }
 }
