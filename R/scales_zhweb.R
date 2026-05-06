@@ -71,6 +71,7 @@ scale_colour_zhweb <- function(name = "zhweb_cat",
 #'     default ist "zhweb_cat"
 #' @param n Anzahl Farben, alle falls nicht angegeben
 #' @param discrete diskrete oder stetige Variable, default ist diskret
+#' @param reverse Kehrt die Reihenfolge des Farbvektors um
 #'
 #' @return fill-Skala
 #' @export
@@ -79,16 +80,23 @@ scale_colour_zhweb <- function(name = "zhweb_cat",
 #' ggplot2::ggplot(mtcars, ggplot2::aes(x = gear, fill = as.character(gear))) +
 #'   ggplot2::geom_bar() +
 #'   biplaRplot::scale_fill_zhweb("zhweb_cat")
-scale_fill_zhweb <- function(name = "zhweb_cat", n, discrete = TRUE) {
-  if (discrete) {
-    ggplot2::scale_fill_manual(
-      values = zhweb_palettes(name, n = n, type = "discrete")
+scale_fill_zhweb <- function(name = "zhweb_cat",
+                             n,
+                             discrete = TRUE,
+                             reverse = FALSE) {
+    pal <- zhweb_palettes(
+        name = name,
+        n = n,
+        type = if (discrete) "discrete" else "continuous"
     )
-  } else {
-    ggplot2::scale_fill_gradientn(
-      colours = zhweb_palettes(name = name, n = n, type = "continuous")
-    )
-  }
+    if (reverse) {
+        pal <- rev(pal)
+    }
+    if (discrete) {
+        ggplot2::scale_fill_manual(values = pal)
+    } else {
+        ggplot2::scale_fill_gradientn(colours = pal)
+    }
 }
 
 # Alias für American English
