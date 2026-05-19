@@ -42,7 +42,8 @@ zhweb_palettes <- function(name, n, all_palettes = biplaRplot::zhweb_colours,
 scale_colour_zhweb <- function(name = "zhweb_cat",
                                n,
                                discrete = TRUE,
-                               reverse = FALSE) {
+                               reverse = FALSE,
+                               ...) {
   pal <- zhweb_palettes(
     name = name,
     n = n,
@@ -55,11 +56,13 @@ scale_colour_zhweb <- function(name = "zhweb_cat",
 
   if (discrete) {
     ggplot2::scale_colour_manual(
-      values = pal
+      values = pal,
+      ...
     )
   } else {
     ggplot2::scale_colour_gradientn(
-      colours = pal
+      colours = pal,
+      ...
     )
   }
 }
@@ -83,7 +86,8 @@ scale_colour_zhweb <- function(name = "zhweb_cat",
 scale_fill_zhweb <- function(name = "zhweb_cat",
                              n,
                              discrete = TRUE,
-                             reverse = FALSE) {
+                             reverse = FALSE,
+                             ...) {
     pal <- zhweb_palettes(
         name = name,
         n = n,

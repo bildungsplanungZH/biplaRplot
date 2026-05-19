@@ -5,13 +5,14 @@
 #' `grid_x` bzw. `grid_y` steuern.
 #'
 #' @param grid_x boolean Anzeige der Gitterlinien für die X-Achse
-#' @param grid_y boolean Anzeige der Gitterlinien für die X-Achse
+#' @param grid_y boolean Anzeige der Gitterlinien für die Y-Achse
+#' @param ... allows to pass more arguments to `ggplot2::theme_bw()`
 #'
 #' @returns ggplot-Theme
 #' @export
 #'
 #' @examples theme_biplar()
-theme_biplar <- function(grid_x = TRUE, grid_y = TRUE) {
+theme_biplar <- function(grid_x = TRUE, grid_y = TRUE, ...) {
   assertthat::assert_that(assertthat::is.flag(grid_x) &
                             assertthat::is.flag(grid_y))
 
@@ -36,6 +37,7 @@ theme_biplar <- function(grid_x = TRUE, grid_y = TRUE) {
   # Set base theme and font family =============================================
   ggplot2::theme_bw(
     base_family = "Arial",
+    ...,
   ) +
 
     # Overwrite base theme defaults ============================================
