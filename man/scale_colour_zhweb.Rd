@@ -4,7 +4,13 @@
 \alias{scale_colour_zhweb}
 \title{Erzeugt eine colour-Farbskala für ggplot2}
 \usage{
-scale_colour_zhweb(name = "zhweb_cat", n, discrete = TRUE)
+scale_colour_zhweb(
+  name = "zhweb_cat",
+  n,
+  discrete = TRUE,
+  reverse = FALSE,
+  ...
+)
 }
 \arguments{
 \item{name}{Name des Farbvektors aus der Liste biplaRplot::zhweb_colours,
@@ -13,6 +19,11 @@ default ist "zhweb_cat"}
 \item{n}{Anzahl Farben, alle falls nicht angegeben}
 
 \item{discrete}{diskrete oder stetige Variable, default ist diskret}
+
+\item{reverse}{Kehrt die Reihenfolge des Farbvektors um}
+
+\item{...}{Ermöglicht das Weitergeben von Argumenten von \code{ggplot2::scale_colour_manual}
+für diskrete Paletten und \code{ggplot2:scale_colour_gradientn} für kontinuierliche Paletten}
 }
 \value{
 colour-Skala

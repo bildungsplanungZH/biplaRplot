@@ -11,6 +11,10 @@
 #'   \item{zhweb_additional}{ZHWeb-Zusatzfarben}
 #'   \item{zhweb_grey}{Graustufen im ZHWeb}
 #'   \item{zhweb_cat}{ZHWeb-Farben für kategorielle Variablen}
+#'   \item{zhweb_divergingBlueRed}{Blau-Rot diverging Farbskala}
+#'   \item{zhweb_divergingRedBlue}{Rot-Blau diverging Farbskala}
+#'   \item{zhweb_divergingOrangeAquamarine}{Orange-Aquamarine diverging Farbskala}
+#'   \item{zhweb_divergingAquamarineOrange}{Aquamarine-Orange diverging Farbskala}
 #'   ...
 #' }
 #' @source <https://observablehq.com/@bildungsplanungzh/general>

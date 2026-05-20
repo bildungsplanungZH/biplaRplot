@@ -12,11 +12,12 @@ preview_zhweb_colours(domain, env = zhweb_project_colours)
 \item{env}{Environment. Colour registry (default: zhweb_project_colours).}
 }
 \value{
-A ggplot2 object showing the colour swatch.
+A plot showing the colour swatch.
 }
 \description{
 Displays a colour swatch for a given domain.
-Useful to visually inspect whether assigned colours are distinct and appropriate.
+Useful to visually inspect whether assigned colours are distinct and
+appropriate.
 }
 \examples{
 assign_project_colours("subject", c("MINT", "Wirtschaft", "Kunst"))

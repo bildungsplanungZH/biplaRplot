@@ -4,7 +4,7 @@
 \alias{scale_fill_zhweb}
 \title{Erzeugt eine fill-Farbskala für ggplot2}
 \usage{
-scale_fill_zhweb(name = "zhweb_cat", n, discrete = TRUE)
+scale_fill_zhweb(name = "zhweb_cat", n, discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
 \item{name}{Name des Farbvektors aus der Liste biplaRplot::zhweb_colours,
@@ -13,6 +13,11 @@ default ist "zhweb_cat"}
 \item{n}{Anzahl Farben, alle falls nicht angegeben}
 
 \item{discrete}{diskrete oder stetige Variable, default ist diskret}
+
+\item{reverse}{Kehrt die Reihenfolge des Farbvektors um}
+
+\item{...}{Ermöglicht das Weitergeben von Argumenten von \code{ggplot2::scale_fill_manual}
+für diskrete Paletten und \code{ggplot2:scale_fill_gradientn} für kontinuierliche Paletten.}
 }
 \value{
 fill-Skala
