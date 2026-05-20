@@ -13,15 +13,19 @@ assign_project_colours(
 )
 }
 \arguments{
-\item{domain}{Character. Name of the domain (e.g. "sex", "subject", "levels").}
+\item{domain}{Character. Name of the domain
+(e.g. "sex", "subject", "levels").}
 
 \item{categories}{Character vector of category names to assign colours to.}
 
-\item{palette_name}{Character. Name of the palette in zhweb_colours (default: "zhweb_cat").}
+\item{palette_name}{Character. Name of the palette in zhweb_colours
+(default: "zhweb_cat").}
 
-\item{use_additional}{Logical. Whether to use zhweb_additional as fallback (default: TRUE).}
+\item{use_additional}{Logical. Whether to use zhweb_additional as fallback
+(default: TRUE).}
 
-\item{env}{Environment. Where the colour registry is stored (default: zhweb_project_colours).}
+\item{env}{Environment. Where the colour registry is stored
+(default: zhweb_project_colours).}
 }
 \value{
 Named character vector of assigned colours.
