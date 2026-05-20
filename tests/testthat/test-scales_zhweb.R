@@ -94,6 +94,27 @@ test_that("scale_colour_zhweb(discrete = FALSE, reverse=TRUE)
 
 })
 
+# Test if adding arguments from ggplot2::scale_colour_manual and
+# ggplot2::scale_colour_gradientn works
+
+test_that("forwards additional arguments to discrete scale", {
+    scale <- scale_colour_zhweb(
+        discrete = TRUE,
+        na.value = "hotpink"
+    )
+    expect_equal(scale$na.value, "hotpink")
+    expect_s3_class(scale, "ScaleDiscrete")
+})
+
+test_that("forwards additional arguments to continuous scale", {
+              scale <- scale_colour_zhweb(
+                  discrete = FALSE,
+                  na.value = "hotpink"
+              )
+              expect_equal(scale$na.value, "hotpink")
+              expect_s3_class(scale, "ScaleContinuous")
+})
+
 # scale_fill_zhweb: --------------------------------------------------------
 
 # Test that default arguments work
@@ -171,3 +192,24 @@ test_that("scale_fill_zhweb(discrete = FALSE, reverse=TRUE)
                            toupper(c("#125c96", "#9e1d4d")))
 
           })
+
+# Test if adding arguments from ggplot2::scale_fill_manual and
+# ggplot2::scale_fill_gradientn works
+
+test_that("forwards additional arguments to discrete scale", {
+    scale <- scale_fill_zhweb(
+        discrete = TRUE,
+        na.value = "hotpink"
+    )
+    expect_equal(scale$na.value, "hotpink")
+    expect_s3_class(scale, "ScaleDiscrete")
+})
+
+test_that("forwards additional arguments to continuous scale", {
+    scale <- scale_fill_zhweb(
+        discrete = FALSE,
+        na.value = "hotpink"
+    )
+    expect_equal(scale$na.value, "hotpink")
+    expect_s3_class(scale, "ScaleContinuous")
+})
