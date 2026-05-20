@@ -4,18 +4,21 @@
 \alias{theme_biplar}
 \title{ggplot-Theme für die Bildungsplanung Kanton Zürich}
 \usage{
-theme_biplar(grid_x = TRUE, grid_y = TRUE)
+theme_biplar(grid_x = TRUE, grid_y = TRUE, ...)
 }
 \arguments{
 \item{grid_x}{boolean Anzeige der Gitterlinien für die X-Achse}
 
-\item{grid_y}{boolean Anzeige der Gitterlinien für die X-Achse}
+\item{grid_y}{boolean Anzeige der Gitterlinien für die Y-Achse}
+
+\item{...}{allows to pass more arguments to \code{ggplot2::theme_bw()}}
 }
 \value{
 ggplot-Theme
 }
 \description{
 Das biplar-Theme basiert auf theme_bw() und überschreibt ausgewählte Elemente
+Es können auch Parameter von theme_bw() übergeben werden
 Die Darstellung der Gitterlinien lässt sich pro Achse über die Argumente
 \code{grid_x} bzw. \code{grid_y} steuern.
 }
