@@ -1,13 +1,13 @@
 #' ggplot-Theme für die Bildungsplanung Kanton Zürich
 #'
-#' Das biplar-Theme basiert auf theme_bw() und überschreibt ausgewählte Elemente
-#' Es können auch Parameter von theme_bw() übergeben werden
+#' Das biplar-Theme basiert auf `ggplot2::theme_bw()` und überschreibt ausgewählte Elemente
+#' Es können auch weitere Parameter von `ggplot2::theme()` übergeben werden
 #' Die Darstellung der Gitterlinien lässt sich pro Achse über die Argumente
 #' `grid_x` bzw. `grid_y` steuern.
 #'
 #' @param grid_x boolean Anzeige der Gitterlinien für die X-Achse
 #' @param grid_y boolean Anzeige der Gitterlinien für die Y-Achse
-#' @param ... allows to pass more arguments to `ggplot2::theme_bw()`
+#' @param ... allows to pass more arguments to `ggplot2::theme()`
 #'
 #' @returns ggplot-Theme
 #' @export
@@ -41,8 +41,7 @@ theme_biplar <- function(grid_x = TRUE, grid_y = TRUE, ...) {
 
   # Set base theme and font family =============================================
   ggplot2::theme_bw(
-    base_family = "Arial",
-    ...,
+    base_family = "Arial"
   ) +
 
     # Overwrite base theme defaults ============================================
@@ -85,7 +84,8 @@ theme_biplar <- function(grid_x = TRUE, grid_y = TRUE, ...) {
       ),
       # to facet strip and text
       strip.background = ggplot2::element_blank(),
-      strip.text = ggplot2::element_text(size = 12)
+      strip.text = ggplot2::element_text(size = 12),
+      ...
     )
 }
 
