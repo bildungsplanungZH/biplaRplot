@@ -4,9 +4,11 @@
 \alias{scale_x_syear}
 \title{Formatiert die Beschriftungen auf der X-Achse als Schuljahre}
 \usage{
-scale_x_syear(...)
+scale_x_syear(name = "Schuljahr", ...)
 }
 \arguments{
+\item{name}{Achsenbeschriftung (Default: "Schuljahr")}
+
 \item{...}{generische Argumente für ggplot2::scale_x_continuous()}
 }
 \value{

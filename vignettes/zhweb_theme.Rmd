@@ -17,9 +17,9 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-devtools::load_all()
 library(biplaRplot)
 library(ggplot2)
+library(stringr)
 ```
 
 ## Überblick

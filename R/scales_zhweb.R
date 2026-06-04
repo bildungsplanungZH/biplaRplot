@@ -1,3 +1,5 @@
+utils::globalVariables("zhweb_colours")
+
 #' Erzeugt eine Palette mithilfe einer Liste von Farbvektoren aus einer Liste
 #'
 #' @param name Name des Farbvektors

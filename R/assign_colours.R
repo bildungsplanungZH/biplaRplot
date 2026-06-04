@@ -63,6 +63,8 @@ assign_project_colours <- function(domain,
 #' @param domain Character. Domain name (e.g. "sex", "subject", "levels").
 #' @param env Environment. Colour registry (default: zhweb_project_colours).
 #'
+#' @importFrom graphics par barplot text
+#'
 #' @return A plot showing the colour swatch.
 #' @export
 #'

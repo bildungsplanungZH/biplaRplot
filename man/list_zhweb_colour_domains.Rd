@@ -15,3 +15,7 @@ Character vector of domain names
 \description{
 Lists all domain names stored in the colour registry.
 }
+\examples{
+assign_project_colours("subject", c("MINT", "Wirtschaft", "Kunst"))
+list_zhweb_colour_domains()
+}

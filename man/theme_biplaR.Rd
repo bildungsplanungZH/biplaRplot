@@ -11,14 +11,14 @@ theme_biplar(grid_x = TRUE, grid_y = TRUE, ...)
 
 \item{grid_y}{boolean Anzeige der Gitterlinien für die Y-Achse}
 
-\item{...}{allows to pass more arguments to \code{ggplot2::theme_bw()}}
+\item{...}{allows to pass more arguments to \code{ggplot2::theme()}}
 }
 \value{
 ggplot-Theme
 }
 \description{
-Das biplar-Theme basiert auf theme_bw() und überschreibt ausgewählte Elemente
-Es können auch Parameter von theme_bw() übergeben werden
+Das biplar-Theme basiert auf \code{ggplot2::theme_bw()} und überschreibt ausgewählte Elemente
+Es können auch weitere Parameter von \code{ggplot2::theme()} übergeben werden
 Die Darstellung der Gitterlinien lässt sich pro Achse über die Argumente
 \code{grid_x} bzw. \code{grid_y} steuern.
 }
