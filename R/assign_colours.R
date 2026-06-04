@@ -109,6 +109,10 @@ preview_zhweb_colours <- function(domain, env = zhweb_project_colours) {
 #'
 #' @param env Colour registry (default: zhweb_project_colours)
 #' @return Character vector of domain names
+#'
+#' @examples
+#' assign_project_colours("subject", c("MINT", "Wirtschaft", "Kunst"))
+#' list_zhweb_colour_domains()
 #' @export
 list_zhweb_colour_domains <- function(env = zhweb_project_colours) {
   names(env$registry)
