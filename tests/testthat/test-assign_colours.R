@@ -34,7 +34,6 @@ test_that("assign_project_colours:
     "reptilia",
     c("alligator", "turtle")
   )
-
   # Expect named vector as output
   expect_named(result1, c("alligator", "turtle"))
 
@@ -52,7 +51,6 @@ test_that("assign_project_colours:
     "fruit",
     c("banana", "pear", "apple")
   )
-
   # Ensure there is no overlap to first domain
   expect_equal(intersect(result1, result2), character(0))
 })

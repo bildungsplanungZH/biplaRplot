@@ -20,7 +20,10 @@ test_that("ssz_theme returns errors if incorrect parameters specified", {
 
 # Passes arguments to ggplot2::theme()
 test_that("theme_biplar can pass theme() arguments", {
-  theme <- theme_biplar(plot.caption = ggplot2::element_text(colour = "hotpink"))
+  theme <- theme_biplar(
+    plot.caption =
+      ggplot2::element_text(colour = "hotpink")
+  )
 
   expect_s3_class(theme$plot.caption, "element_text")
   expect_equal(theme$plot.caption$colour, "hotpink")

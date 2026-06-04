@@ -69,6 +69,7 @@ ggplot(mtcars, aes(x = mpg, y = disp, colour = hp)) +
     colour = "Pferdestärke (hp)"
   ) +
   theme_biplar( # Implementierung des biplar-Themes
-    plot.caption = element_text(colour = "hotpink") # Anpassung der Caption Farbe via ggplot2::theme()
+    # Anpassung der Caption Farbe via ggplot2::theme()
+    plot.caption = element_text(colour = "hotpink")
   )
 ```

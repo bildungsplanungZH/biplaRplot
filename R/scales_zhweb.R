@@ -33,8 +33,9 @@ zhweb_palettes <- function(name, n, all_palettes = biplaRplot::zhweb_colours,
 #' @param n Anzahl Farben, alle falls nicht angegeben
 #' @param discrete diskrete oder stetige Variable, default ist diskret
 #' @param reverse Kehrt die Reihenfolge des Farbvektors um
-#' @param ... Ermöglicht das Weitergeben von Argumenten von `ggplot2::scale_colour_manual`
-#' für diskrete Paletten und `ggplot2:scale_colour_gradientn` für kontinuierliche Paletten
+#' @param ... Ermöglicht das Weitergeben von Argumenten
+#' von `ggplot2::scale_colour_manual` für diskrete Paletten
+#' und `ggplot2:scale_colour_gradientn` für kontinuierliche Paletten
 #'
 #' @return colour-Skala
 #' @export
@@ -79,8 +80,9 @@ scale_colour_zhweb <- function(name = "zhweb_cat",
 #' @param n Anzahl Farben, alle falls nicht angegeben
 #' @param discrete diskrete oder stetige Variable, default ist diskret
 #' @param reverse Kehrt die Reihenfolge des Farbvektors um
-#' @param ... Ermöglicht das Weitergeben von Argumenten von `ggplot2::scale_fill_manual`
-#' für diskrete Paletten und `ggplot2:scale_fill_gradientn` für kontinuierliche Paletten.
+#' @param ... Ermöglicht das Weitergeben von Argumenten
+#' von `ggplot2::scale_fill_manual` für diskrete Paletten
+#' und `ggplot2:scale_fill_gradientn` für kontinuierliche Paletten.
 #'
 #' @return fill-Skala
 #' @export

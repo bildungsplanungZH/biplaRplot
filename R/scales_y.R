@@ -45,7 +45,9 @@ scale_y_pct <- function(accuracy = 1, name = "Anteil in Prozent", ...) {
 #'   ggplot2::ggplot(ggplot2::aes(group, n)) +
 #'   ggplot2::geom_col() +
 #'   scale_y_count()
-scale_y_count <- function(digits = 0, big_mark = "'", name = "Anzahl Lernende", ...) {
+scale_y_count <- function(digits = 0,
+                          big_mark = "'",
+                          name = "Anzahl Lernende", ...) {
   ggplot2::scale_y_continuous(
     name = name,
     labels = \(x) format(round(x, digits), big.mark = big_mark),

@@ -1,6 +1,7 @@
 #' ggplot-Theme für die Bildungsplanung Kanton Zürich
 #'
-#' Das biplar-Theme basiert auf `ggplot2::theme_bw()` und überschreibt ausgewählte Elemente
+#' Das biplar-Theme basiert auf `ggplot2::theme_bw()` und überschreibt
+#' ausgewählte Elemente
 #' Es können auch weitere Parameter von `ggplot2::theme()` übergeben werden
 #' Die Darstellung der Gitterlinien lässt sich pro Achse über die Argumente
 #' `grid_x` bzw. `grid_y` steuern.
