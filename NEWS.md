@@ -1,4 +1,4 @@
-## biplaRplot 0.2.0 (2026-05-26)
+# biplaRplot 0.2.0
 
 Folgende Erweiterungen wurden in dieser Version umgesetzt:
 
@@ -21,7 +21,7 @@ Folgende Erweiterungen wurden in dieser Version umgesetzt:
     - `scale_x_pct()` und `scale_y_pct()`: "Anteil in Prozent"
   - Hinzufügen eines `...`-Arguments zur Übergabe zusätzlicher Argumente an die entsprechenden `ggplot2`-Skalenfunktionen.
 
-## biplaRplot 0.1.0 (2026-01-06)
+## biplaRplot 0.1.0 
 
 Die erste Version enthält folgende Funktionalitäten:
 
