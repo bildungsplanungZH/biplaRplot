@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.width = 7,
-  fig.height = 7*9/16
+  fig.height = 7 * 9 / 16
 )
 ```
 
@@ -29,42 +29,46 @@ Die Funktion `theme_biplaR()` ermöglicht eine schnelle Implementierung eines m�
 
 ```{r}
 ggplot(mtcars, aes(x = mpg, y = disp, colour = hp)) +
-    geom_point() +
-    scale_colour_zhweb("zhweb_divergingRedBlue",
-                       discrete = FALSE,
-                       guide = guide_colourbar(barwidth = 15, barheight = 1)) + 
-    labs(
-        title =  str_wrap(
-            "Beispieltitel: Beziehung zwischen Kraftstoffeffizienz, 
-            Hubraum und Motorleistung", width = 70
-        ),
-        caption = "Beispielfussnote: Datenquelle = mtcars (R-Standarddatensatz)",
-        x = "Kraftstoffeffizienz (mpg)",
-        y = "Hubraum (disp)",
-        colour = "Pferdestärke (hp)"
-    ) +
-    theme_biplar() # Implementierung des biplar-Themes
+  geom_point() +
+  scale_colour_zhweb("zhweb_divergingRedBlue",
+    discrete = FALSE,
+    guide = guide_colourbar(barwidth = 15, barheight = 1)
+  ) +
+  labs(
+    title = str_wrap(
+      "Beispieltitel: Beziehung zwischen Kraftstoffeffizienz,
+            Hubraum und Motorleistung",
+      width = 70
+    ),
+    caption = "Beispielfussnote: Datenquelle = mtcars (R-Standarddatensatz)",
+    x = "Kraftstoffeffizienz (mpg)",
+    y = "Hubraum (disp)",
+    colour = "Pferdestärke (hp)"
+  ) +
+  theme_biplar() # Implementierung des biplar-Themes
 ```
 
 ## Weitergeben von ggplot2::theme() Elementen
 
 ```{r}
 ggplot(mtcars, aes(x = mpg, y = disp, colour = hp)) +
-    geom_point() +
-    scale_colour_zhweb("zhweb_divergingRedBlue",
-                       discrete = FALSE,
-                       guide = guide_colourbar(barwidth = 15, barheight = 1)) + 
-    labs(
-        title =  str_wrap(
-            "Beispieltitel: Beziehung zwischen Kraftstoffeffizienz, 
-            Hubraum und Motorleistung", width = 70
-        ),
-        caption = "Beispielfussnote: Datenquelle = mtcars (R-Standarddatensatz)",
-        x = "Kraftstoffeffizienz (mpg)",
-        y = "Hubraum (disp)",
-        colour = "Pferdestärke (hp)"
-    ) +
-    theme_biplar( # Implementierung des biplar-Themes
-        plot.caption = element_text(colour = "hotpink") # Anpassung der Caption Farbe via ggplot2::theme()
-        )
+  geom_point() +
+  scale_colour_zhweb("zhweb_divergingRedBlue",
+    discrete = FALSE,
+    guide = guide_colourbar(barwidth = 15, barheight = 1)
+  ) +
+  labs(
+    title = str_wrap(
+      "Beispieltitel: Beziehung zwischen Kraftstoffeffizienz,
+            Hubraum und Motorleistung",
+      width = 70
+    ),
+    caption = "Beispielfussnote: Datenquelle = mtcars (R-Standarddatensatz)",
+    x = "Kraftstoffeffizienz (mpg)",
+    y = "Hubraum (disp)",
+    colour = "Pferdestärke (hp)"
+  ) +
+  theme_biplar( # Implementierung des biplar-Themes
+    plot.caption = element_text(colour = "hotpink") # Anpassung der Caption Farbe via ggplot2::theme()
+  )
 ```

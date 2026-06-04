@@ -26,7 +26,6 @@ scale_y_pct <- function(accuracy = 1, name = "Anteil in Prozent", ...) {
 }
 
 
-
 #' Formatiert Y-Achse ohne Nachkommastellen und mit Hochkomma für Tausender
 #'
 #' @param digits numeric Anzahl Nachkommastellen, default ist 0

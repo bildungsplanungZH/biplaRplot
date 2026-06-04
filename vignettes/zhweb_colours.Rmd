@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.width = 5,
-  fig.height = 5*9/16
+  fig.height = 5 * 9 / 16
 )
 ```
 
@@ -74,7 +74,7 @@ diamonds |>
   ggplot(aes(x = color, fill = cut)) +
   geom_bar() +
   scale_fill_zhweb("zhweb_cat") +
-  theme(legend.position = "right") + 
+  theme(legend.position = "right") +
   theme_biplar()
 ```
 
@@ -85,31 +85,33 @@ Mit dem Argument `reverse` kannd die Reihenfolge der Farbe in einer Farbskala ei
 
 ```{r}
 ggplot(mtcars, aes(x = mpg, y = disp, colour = hp)) +
-    geom_point() +
-    scale_colour_zhweb("zhweb_divergingRedBlue",
-                       discrete = FALSE,
-                       reverse = FALSE,
-                       guide = guide_colourbar(barwidth = 10, barheight = 1)) + 
-    labs(
-        x = "Kraftstoffeffizienz (mpg)",
-        y = "Hubraum (disp)",
-        colour = "Pferdestärke (hp)"
-    ) +
-    theme_biplar()
+  geom_point() +
+  scale_colour_zhweb("zhweb_divergingRedBlue",
+    discrete = FALSE,
+    reverse = FALSE,
+    guide = guide_colourbar(barwidth = 10, barheight = 1)
+  ) +
+  labs(
+    x = "Kraftstoffeffizienz (mpg)",
+    y = "Hubraum (disp)",
+    colour = "Pferdestärke (hp)"
+  ) +
+  theme_biplar()
 ```
 
 **Umgekehrt Blau-Rot `(reverse=TRUE)`**
 ```{r}
 ggplot(mtcars, aes(x = mpg, y = disp, colour = hp)) +
-    geom_point() +
-    scale_colour_zhweb("zhweb_divergingRedBlue",
-                       discrete = FALSE,
-                       reverse = TRUE,
-                       guide = guide_colourbar(barwidth = 10, barheight = 1)) + 
-    labs(
-        x = "Kraftstoffeffizienz (mpg)",
-        y = "Hubraum (disp)",
-        colour = "Pferdestärke (hp)"
-    ) +
-    theme_biplar()
+  geom_point() +
+  scale_colour_zhweb("zhweb_divergingRedBlue",
+    discrete = FALSE,
+    reverse = TRUE,
+    guide = guide_colourbar(barwidth = 10, barheight = 1)
+  ) +
+  labs(
+    x = "Kraftstoffeffizienz (mpg)",
+    y = "Hubraum (disp)",
+    colour = "Pferdestärke (hp)"
+  ) +
+  theme_biplar()
 ```

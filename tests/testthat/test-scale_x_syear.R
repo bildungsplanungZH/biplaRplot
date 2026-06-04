@@ -17,13 +17,13 @@ test_that("Plot ausgeben funktioniert", {
 })
 
 test_that("Default Achsenbeschriftung = Schuljahr", {
-    expect_equal(p$scales$scales[[1]]$name, "Schuljahr")
+  expect_equal(p$scales$scales[[1]]$name, "Schuljahr")
 })
 
 test_that("Achsenbeschriftung kann überschrieben werden", {
-    p2 <- ex_data |>
-        ggplot2::ggplot(ggplot2::aes(jahr, n)) +
-        ggplot2::geom_col() +
-        scale_x_syear(name = "Testlabel")
-    expect_equal(p2$scales$scales[[1]]$name, "Testlabel")
+  p2 <- ex_data |>
+    ggplot2::ggplot(ggplot2::aes(jahr, n)) +
+    ggplot2::geom_col() +
+    scale_x_syear(name = "Testlabel")
+  expect_equal(p2$scales$scales[[1]]$name, "Testlabel")
 })

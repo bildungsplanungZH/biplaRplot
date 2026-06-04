@@ -15,7 +15,7 @@
 #' @examples theme_biplar()
 theme_biplar <- function(grid_x = TRUE, grid_y = TRUE, ...) {
   assertthat::assert_that(assertthat::is.flag(grid_x) &
-                            assertthat::is.flag(grid_y))
+    assertthat::is.flag(grid_y))
 
   gridline <- ggplot2::element_line(
     linetype = "22",
@@ -88,4 +88,3 @@ theme_biplar <- function(grid_x = TRUE, grid_y = TRUE, ...) {
       ...
     )
 }
-

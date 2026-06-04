@@ -94,19 +94,19 @@ scale_fill_zhweb <- function(name = "zhweb_cat",
                              discrete = TRUE,
                              reverse = FALSE,
                              ...) {
-    pal <- zhweb_palettes(
-        name = name,
-        n = n,
-        type = if (discrete) "discrete" else "continuous"
-    )
-    if (reverse) {
-        pal <- rev(pal)
-    }
-    if (discrete) {
-        ggplot2::scale_fill_manual(values = pal, ...)
-    } else {
-        ggplot2::scale_fill_gradientn(colours = pal, ...)
-    }
+  pal <- zhweb_palettes(
+    name = name,
+    n = n,
+    type = if (discrete) "discrete" else "continuous"
+  )
+  if (reverse) {
+    pal <- rev(pal)
+  }
+  if (discrete) {
+    ggplot2::scale_fill_manual(values = pal, ...)
+  } else {
+    ggplot2::scale_fill_gradientn(colours = pal, ...)
+  }
 }
 
 # Alias für American English

@@ -30,8 +30,11 @@ assign_project_colours <- function(domain,
   }
 
   palette <- zhweb_colours[[palette_name]]
-  palette_add <- if (use_additional) zhweb_colours$zhweb_additional
-  else character(0)
+  palette_add <- if (use_additional) {
+    zhweb_colours$zhweb_additional
+  } else {
+    character(0)
+  }
 
   all_available <- c(palette, palette_add)
 
@@ -51,7 +54,6 @@ assign_project_colours <- function(domain,
   env$registry[[domain]] <- assigned
   assigned
 }
-
 
 
 #' Preview assigned colours for a domain
