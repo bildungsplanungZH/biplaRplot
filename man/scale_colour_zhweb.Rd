@@ -22,8 +22,9 @@ default ist "zhweb_cat"}
 
 \item{reverse}{Kehrt die Reihenfolge des Farbvektors um}
 
-\item{...}{Ermöglicht das Weitergeben von Argumenten von \code{ggplot2::scale_colour_manual}
-für diskrete Paletten und \code{ggplot2:scale_colour_gradientn} für kontinuierliche Paletten}
+\item{...}{Ermöglicht das Weitergeben von Argumenten
+von \code{ggplot2::scale_colour_manual} für diskrete Paletten
+und \code{ggplot2:scale_colour_gradientn} für kontinuierliche Paletten}
 }
 \value{
 colour-Skala

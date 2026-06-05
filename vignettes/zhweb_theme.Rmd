@@ -1,0 +1,75 @@
+---
+title: "ZHWeb-Theme für ggplot-Objekte"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{zhweb_theme}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 7 * 9 / 16
+)
+```
+
+```{r setup}
+library(biplaRplot)
+library(ggplot2)
+library(stringr)
+```
+
+## Überblick
+Die Funktion `theme_biplaR()` ermöglicht eine schnelle Implementierung eines möglichst CD-konformen ggplot-Themes. Die Darstellung orientiert sich an den [Observable-Grafiken](https://observablehq.com/@bildungsplanungzh/general). Das Theme basiert auf `ggplot2::theme_bw()`, wenn nötig können weitere Argumente an `ggplot2::theme()` übergeben werden. 
+
+## Beispielgrafik
+
+```{r}
+ggplot(mtcars, aes(x = mpg, y = disp, colour = hp)) +
+  geom_point() +
+  scale_colour_zhweb("zhweb_divergingRedBlue",
+    discrete = FALSE,
+    guide = guide_colourbar(barwidth = 15, barheight = 1)
+  ) +
+  labs(
+    title = str_wrap(
+      "Beispieltitel: Beziehung zwischen Kraftstoffeffizienz,
+            Hubraum und Motorleistung",
+      width = 70
+    ),
+    caption = "Beispielfussnote: Datenquelle = mtcars (R-Standarddatensatz)",
+    x = "Kraftstoffeffizienz (mpg)",
+    y = "Hubraum (disp)",
+    colour = "Pferdestärke (hp)"
+  ) +
+  theme_biplar() # Implementierung des biplar-Themes
+```
+
+## Weitergeben von ggplot2::theme() Elementen
+
+```{r}
+ggplot(mtcars, aes(x = mpg, y = disp, colour = hp)) +
+  geom_point() +
+  scale_colour_zhweb("zhweb_divergingRedBlue",
+    discrete = FALSE,
+    guide = guide_colourbar(barwidth = 15, barheight = 1)
+  ) +
+  labs(
+    title = str_wrap(
+      "Beispieltitel: Beziehung zwischen Kraftstoffeffizienz,
+            Hubraum und Motorleistung",
+      width = 70
+    ),
+    caption = "Beispielfussnote: Datenquelle = mtcars (R-Standarddatensatz)",
+    x = "Kraftstoffeffizienz (mpg)",
+    y = "Hubraum (disp)",
+    colour = "Pferdestärke (hp)"
+  ) +
+  theme_biplar( # Implementierung des biplar-Themes
+    # Anpassung der Caption Farbe via ggplot2::theme()
+    plot.caption = element_text(colour = "hotpink")
+  )
+```

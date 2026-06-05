@@ -1,6 +1,8 @@
 ---
 title: "ZHWeb-Farben in Abbildungen verwenden"
-author: "`r utils::person('Sarah', 'Gerhard', email = 'sarah.gerhard@bi.zh.ch')`"
+author: 
+  - "`r utils::person('Sarah', 'Gerhard', email = 'sarah.gerhard@bi.zh.ch')`"
+  - "`r utils::person('Christina', 'Arn', email = 'christina.arn@bi.zh.ch')`"
 date: "`r format(Sys.Date(), '%d. %B %Y')`"
 output: 
     rmarkdown::html_vignette:
@@ -14,7 +16,9 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.width = 5,
+  fig.height = 5 * 9 / 16
 )
 ```
 
@@ -26,16 +30,19 @@ library(ggplot2)
 
 ## Package installieren
 
-Die aktuelle Version des Packages `biplaRplot` lässt sich mit `devtools::install_github("bildungsplanungZH/biplaRplot")` installieren.
+Package installieren mit `devtools::install_github("bildungsplanungZH/biplaRplot", build_vignettes = TRUE)`
+
 
 ## ZHWeb-Farbpaletten
 
-Das Objekt `zhweb_colours` im package `biplaRplot` enthält verschiedene Farbpaletten gemäss Grundkonfigurationen für die Webgrafiken der Bildungsplanung des Kantons Zürich ([Link](https://observablehq.com/@bildungsplanungzh/general#cell-28))
+Das Objekt `zhweb_colours` im Paket `biplaRplot` enthält verschiedene Farbpaletten gemäss Grundkonfigurationen für die Webgrafiken der Bildungsplanung des Kantons Zürich ([Link](https://observablehq.com/@bildungsplanungzh/general#cell-28))
 
 * `zhweb` enthält die ZHWeb-Grundfarben (ohne Graustufen)
 * `zhweb_additional` die ZHWeb-Zusatzfarben
 * `zhweb_grey` die Graustufen im ZHWeb und
 * `zhweb_cat` die ZHWeb-Farben für kategorielle Variablen.
+* `zhweb_divergingRedBlue` enthält eine Rot-Blau divergierende Farbskala fürs ZHWeb.
+* `zhweb_divergingOrangeAquamarine` enthält eine Orange-Aquamarin divergierende Farbskala fürs ZHweb.
 
 Die Paletten können entweder über das Listenobjekt `zhweb_colours` oder mithilfe der Funktion `zhweb_palettes()` aufgerufen werden. Der Aufruf über das Listenobjekt gibt einen character vector der Farbcodes zurück, der Aufruf übr die Funktion ein Paletten-Objekt. 
 
@@ -53,7 +60,8 @@ Die Funktion `scale_colour_zhweb()` erzeugt eine colour-Skala für ggplot-Grafik
 mtcars |>
   ggplot(aes(x = disp, y = hp, colour = as.factor(cyl))) +
   geom_point() +
-  scale_colour_zhweb("zhweb_cat")
+  scale_colour_zhweb("zhweb_cat") +
+  theme_biplar()
 ```
 
 
@@ -66,5 +74,44 @@ diamonds |>
   ggplot(aes(x = color, fill = cut)) +
   geom_bar() +
   scale_fill_zhweb("zhweb_cat") +
-  theme(legend.position = "right")
+  theme(legend.position = "right") +
+  theme_biplar()
+```
+
+## Reihenfolge der Farbskala umdrehen
+Mit dem Argument `reverse` kannd die Reihenfolge der Farbe in einer Farbskala einfach umgekehrt werden. Diese Option eignet sich primär bei den divergierenden Farbpaletten.
+
+**Normal Rot-Blau `(reverse = FALSE)` **
+
+```{r}
+ggplot(mtcars, aes(x = mpg, y = disp, colour = hp)) +
+  geom_point() +
+  scale_colour_zhweb("zhweb_divergingRedBlue",
+    discrete = FALSE,
+    reverse = FALSE,
+    guide = guide_colourbar(barwidth = 10, barheight = 1)
+  ) +
+  labs(
+    x = "Kraftstoffeffizienz (mpg)",
+    y = "Hubraum (disp)",
+    colour = "Pferdestärke (hp)"
+  ) +
+  theme_biplar()
+```
+
+**Umgekehrt Blau-Rot `(reverse=TRUE)`**
+```{r}
+ggplot(mtcars, aes(x = mpg, y = disp, colour = hp)) +
+  geom_point() +
+  scale_colour_zhweb("zhweb_divergingRedBlue",
+    discrete = FALSE,
+    reverse = TRUE,
+    guide = guide_colourbar(barwidth = 10, barheight = 1)
+  ) +
+  labs(
+    x = "Kraftstoffeffizienz (mpg)",
+    y = "Hubraum (disp)",
+    colour = "Pferdestärke (hp)"
+  ) +
+  theme_biplar()
 ```

@@ -16,8 +16,9 @@ default ist "zhweb_cat"}
 
 \item{reverse}{Kehrt die Reihenfolge des Farbvektors um}
 
-\item{...}{Ermöglicht das Weitergeben von Argumenten von \code{ggplot2::scale_fill_manual}
-für diskrete Paletten und \code{ggplot2:scale_fill_gradientn} für kontinuierliche Paletten.}
+\item{...}{Ermöglicht das Weitergeben von Argumenten
+von \code{ggplot2::scale_fill_manual} für diskrete Paletten
+und \code{ggplot2:scale_fill_gradientn} für kontinuierliche Paletten.}
 }
 \value{
 fill-Skala

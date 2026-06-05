@@ -4,10 +4,12 @@
 \alias{scale_y_pct}
 \title{Formatiert Y-Achse für Prozentangaben}
 \usage{
-scale_y_pct(accuracy = 1, ...)
+scale_y_pct(accuracy = 1, name = "Anteil in Prozent", ...)
 }
 \arguments{
 \item{accuracy}{numeric Argument für scales::percent()}
+
+\item{name}{Achsenbeschriftung (Default: Anteil in Prozent)}
 
 \item{...}{generische Argumente für ggplot2::scale_y_continuous()}
 }

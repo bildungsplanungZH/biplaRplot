@@ -17,13 +17,13 @@ test_that("Plot ausgeben funktioniert", {
 })
 
 test_that("Default Achsenbeschriftung = Anzahl Lernende", {
-    expect_equal(p$scales$scales[[1]]$name, "Anzahl Lernende")
+  expect_equal(p$scales$scales[[1]]$name, "Anzahl Lernende")
 })
 
 test_that("Achsenbeschriftung kann überschrieben werden", {
-    p2 <- ex_data |>
-        ggplot2::ggplot(ggplot2::aes(group, n)) +
-        ggplot2::geom_col() +
-        scale_y_count(name = "Testlabel")
-    expect_equal(p2$scales$scales[[1]]$name, "Testlabel")
+  p2 <- ex_data |>
+    ggplot2::ggplot(ggplot2::aes(group, n)) +
+    ggplot2::geom_col() +
+    scale_y_count(name = "Testlabel")
+  expect_equal(p2$scales$scales[[1]]$name, "Testlabel")
 })

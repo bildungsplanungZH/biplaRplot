@@ -30,8 +30,11 @@ assign_project_colours <- function(domain,
   }
 
   palette <- zhweb_colours[[palette_name]]
-  palette_add <- if (use_additional) zhweb_colours$zhweb_additional
-  else character(0)
+  palette_add <- if (use_additional) {
+    zhweb_colours$zhweb_additional
+  } else {
+    character(0)
+  }
 
   all_available <- c(palette, palette_add)
 
@@ -53,7 +56,6 @@ assign_project_colours <- function(domain,
 }
 
 
-
 #' Preview assigned colours for a domain
 #'
 #' Displays a colour swatch for a given domain.
@@ -62,6 +64,8 @@ assign_project_colours <- function(domain,
 #'
 #' @param domain Character. Domain name (e.g. "sex", "subject", "levels").
 #' @param env Environment. Colour registry (default: zhweb_project_colours).
+#'
+#' @importFrom graphics par barplot text
 #'
 #' @return A plot showing the colour swatch.
 #' @export
@@ -109,6 +113,10 @@ preview_zhweb_colours <- function(domain, env = zhweb_project_colours) {
 #'
 #' @param env Colour registry (default: zhweb_project_colours)
 #' @return Character vector of domain names
+#'
+#' @examples
+#' assign_project_colours("subject", c("MINT", "Wirtschaft", "Kunst"))
+#' list_zhweb_colour_domains()
 #' @export
 list_zhweb_colour_domains <- function(env = zhweb_project_colours) {
   names(env$registry)
