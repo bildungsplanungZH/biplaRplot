@@ -7,7 +7,7 @@ Folgende Erweiterungen wurden in dieser Version umgesetzt:
   - Hinzufügen der divergierenden Farbskalen
     - `zhweb_divergingRedBlue`
     - `zhweb_divergingOrangeAquamarine`
-  - - Hinzufügen des Argument `reverse` in `scale_colour_zhweb()` und `scale_fill_zhweb()` zum Umkehren der Reihenfolge divergierender Farbskalen.
+    - Hinzufügen des Argument `reverse` in `scale_colour_zhweb()` und `scale_fill_zhweb()` zum Umkehren der Reihenfolge divergierender Farbskalen.
   - Erweiterte Testabdeckung für die Farbfunktionen.
 
 - Verbesserungen von `theme_biplar()`:
