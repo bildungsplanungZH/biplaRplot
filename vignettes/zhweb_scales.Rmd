@@ -65,7 +65,7 @@ ggplot(ex_data, aes(n, group, fill = group)) +
 ```
 
 ## Y-Achse als Anzahl `scale_y_count()`
-Formatiert Y-Achse als Anzahl (ohne Nachkommastellen und mit Hockomma als Tausendertrennzeichen) und beschriftet sie per default als "Anzahl Lernende". Mit dem Argument `name` kann auch eine andere Achsenbeschriftung mitgegeben werden.
+Formatiert Y-Achse als Anzahl (ohne Nachkommastellen und mit Hochkomma als Tausendertrennzeichen) und beschriftet sie per default als "Anzahl Lernende". Mit dem Argument `name` kann auch eine andere Achsenbeschriftung mitgegeben werden.
 
 ```{r}
 # Beispieldatensatz
