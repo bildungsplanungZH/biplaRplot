@@ -11,7 +11,7 @@ Folgende Erweiterungen wurden in dieser Version umgesetzt:
   - Erweiterte Testabdeckung für die Farbfunktionen.
 
 - Verbesserungen von `theme_biplar()`:
-  - Hinzufügen eines `...`-Argument zur Übergabe zusätzlicher Argumente an `ggplot2::theme_bw()`.
+  - Hinzufügen eines `...`-Argument zur Übergabe zusätzlicher Argumente an `ggplot2::theme()`.
   - Behoben: bessere Sichtbarkeit von Gridlines in gerenderten HTML-Ausgaben.
   - Behoben: Schriftfarbe von `geom_text()` wird nun korrekt gesetzt.
 
