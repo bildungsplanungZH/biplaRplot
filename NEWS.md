@@ -1,3 +1,7 @@
+# biplaRplot 0.2.1
+
+Fixed some minor typos
+
 # biplaRplot 0.2.0
 
 Folgende Erweiterungen wurden in dieser Version umgesetzt:
