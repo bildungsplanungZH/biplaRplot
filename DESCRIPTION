@@ -1,6 +1,6 @@
 Package: biplaRplot
 Title: ggplot-Funktionen für die Bildungsplanung
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: c(
     person("Christina", "Arn", , "christina.arn@bi.zh.ch", role = c("aut", "cre")),
     person("Thomas", "Radinger", , "thomas.radinger@bi.zh.ch", role = c("aut")),

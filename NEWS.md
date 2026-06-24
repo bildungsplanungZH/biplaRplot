@@ -1,6 +1,10 @@
+# biplaRplot 0.2.2
+
+Bugfix: `element_geom()` wurde in `theme_biplaR()` entfernt, da es globale Geom-Defaults überschrieben hat. Anstattdessen werden Geom-Defaults einzeln gesetzt.
+
 # biplaRplot 0.2.1
 
-Fixed some minor typos
+Korrektur von Tippfehlern
 
 # biplaRplot 0.2.0
 
