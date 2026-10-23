@@ -39,6 +39,10 @@ theme_biplar <- function(grid_x = TRUE, grid_y = TRUE, ...) {
   # Set geom defaults for text/labels ==========================================
   ggplot2::update_geom_defaults("text", list(colour = "#333333"))
   ggplot2::update_geom_defaults("label", list(colour = "#333333"))
+  ggplot2::update_geom_defaults("point",   list(size = 3))
+  ggplot2::update_geom_defaults("line",    list(linewidth = 1.1))
+  ggplot2::update_geom_defaults("segment", list(linewidth = 1.1))
+  ggplot2::update_geom_defaults("smooth",  list(linewidth = 1.1))
 
   # Set base theme and font family =============================================
   ggplot2::theme_bw(
@@ -78,11 +82,6 @@ theme_biplar <- function(grid_x = TRUE, grid_y = TRUE, ...) {
       legend.title = ggplot2::element_text(size = 12),
       legend.title.position = "top",
       legend.text = ggplot2::element_text(size = 11),
-      # to geoms
-      geom = ggplot2::element_geom(
-        pointsize = 3,
-        linewidth = 1.1,
-      ),
       # to facet strip and text
       strip.background = ggplot2::element_blank(),
       strip.text = ggplot2::element_text(size = 12),
